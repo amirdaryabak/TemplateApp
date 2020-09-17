@@ -1,4 +1,4 @@
-package com.amirdaryabak.templateapp.models
+package com.amirdaryabak.templateapp.db.tables
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -11,5 +11,5 @@ import java.io.Serializable
 data class MyDataModel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Int? = null
+    var id: Int
 ) : Serializable

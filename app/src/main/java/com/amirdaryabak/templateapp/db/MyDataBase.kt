@@ -2,7 +2,7 @@ package com.amirdaryabak.templateapp.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.amirdaryabak.templateapp.models.MyDataModel
+import com.amirdaryabak.templateapp.db.tables.MyDataModel
 
 @Database(
     entities = [MyDataModel::class],

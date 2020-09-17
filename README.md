@@ -12,3 +12,4 @@
 7. Easy Permissions
 8. Glide
 9. Toasty
+10. Timber
