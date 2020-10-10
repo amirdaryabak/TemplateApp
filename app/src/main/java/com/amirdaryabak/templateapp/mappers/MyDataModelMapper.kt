@@ -12,12 +12,13 @@ constructor(): EntityMapper<MyDataModelResponse, MyDataModel> {
     override fun mapFromEntity(entity: MyDataModelResponse): MyDataModel {
         return MyDataModel(
             id = entity.id,
+            name = "",
         )
     }
 
     override fun mapToEntity(domainModel: MyDataModel): MyDataModelResponse {
         return MyDataModelResponse(
-            id = domainModel.id,
+            id = domainModel.id!!,
         )
     }
 

@@ -1,4 +1,4 @@
-package com.amirdaryabak.templateapp.repository
+package com.amirdaryabak.templateapp.repositories
 
 import androidx.paging.PagingSource
 import com.amirdaryabak.templateapp.api.MyApi

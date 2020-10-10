@@ -23,10 +23,7 @@ object RetrofitModule {
 
     @Singleton
     @Provides
-    fun provideGsonBuilder(): Gson {
-        return GsonBuilder()
-            .create()
-    }
+    fun provideGsonBuilder(): Gson = GsonBuilder().create()
 
 
     @Provides
@@ -48,23 +45,19 @@ object RetrofitModule {
         .build()
 
 
-
     @Singleton
     @Provides
-    fun provideRetrofit(gson:  Gson, okHttpClient: OkHttpClient): Retrofit.Builder {
-        return Retrofit.Builder()
+    fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit.Builder =
+        Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(gson))
-    }
 
     @Singleton
     @Provides
-    fun provideBlogService(retrofit: Retrofit.Builder): MyApi {
-        return retrofit
-            .build()
-            .create(MyApi::class.java)
-    }
+    fun provideBlogService(retrofit: Retrofit.Builder): MyApi =
+        retrofit.build().create(MyApi::class.java)
+
 
 }
 

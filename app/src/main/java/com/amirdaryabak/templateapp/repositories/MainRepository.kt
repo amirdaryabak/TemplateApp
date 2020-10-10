@@ -1,8 +1,7 @@
-package com.amirdaryabak.templateapp.repository
+package com.amirdaryabak.templateapp.repositories
 
 import com.amirdaryabak.templateapp.api.MyApi
 import com.amirdaryabak.templateapp.db.MyDao
-import com.amirdaryabak.templateapp.db.MyDataBase
 import javax.inject.Inject
 
 class MainRepository @Inject constructor(

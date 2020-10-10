@@ -2,10 +2,10 @@ package com.amirdaryabak.templateapp.ui.viewmodels
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
-import com.amirdaryabak.templateapp.repository.MainRepository
+import com.amirdaryabak.templateapp.repositories.MainRepository
 
 class MainViewModel @ViewModelInject constructor(
-    val mainRepository: MainRepository
+    private val repository: MainRepository
 ) : ViewModel() {
 
 

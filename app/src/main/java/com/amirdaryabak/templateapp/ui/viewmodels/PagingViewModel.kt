@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import com.amirdaryabak.templateapp.repository.PagingRepository
+import com.amirdaryabak.templateapp.repositories.PagingRepository
 
 class PagingViewModel @ViewModelInject constructor(
     private val repository: PagingRepository,

@@ -30,7 +30,8 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideBlogDAO(myDataBase: MyDataBase): MyDao {
-        return myDataBase.getMyDao()
-    }
+    fun provideBlogDAO(
+        myDataBase: MyDataBase
+    ): MyDao = myDataBase.getMyDao()
+
 }

@@ -9,7 +9,8 @@ import java.io.Serializable
     tableName = "my_table_name"
 )
 data class MyDataModel(
+    var name: String,
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Int
+    var id: Int? = null,
 ) : Serializable
