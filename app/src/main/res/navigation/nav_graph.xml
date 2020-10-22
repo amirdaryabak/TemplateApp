@@ -13,25 +13,22 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_firstFragment"
-            app:destination="@id/firstFragment" />
+            app:destination="@id/firstFragmentViewPager2" />
     </fragment>
     <fragment
-        android:id="@+id/firstFragment"
+        android:id="@+id/firstFragmentViewPager2"
         android:name="com.amirdaryabak.templateapp.ui.fragments.FirstFragmentViewPager2"
         android:label="FirstFragment"
         tools:layout="@layout/fragment_first">
-        <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.amirdaryabak.templateapp.ui.fragments.SecondFragment"
-        android:label="SecondFragment"
-        tools:layout="@layout/fragment_second"/>
     <fragment
         android:id="@+id/secondFragmentNotifications"
         android:name="com.amirdaryabak.templateapp.ui.fragments.SecondFragmentNotifications"
         android:label="SecondFragmentNotifications"
         tools:layout="@layout/fragment_second"/>
+    <fragment
+        android:id="@+id/thirdFragmentIntentServices"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.ThirdFragmentIntentService"
+        android:label="ThirdFragmentServices"
+        tools:layout="@layout/fragment_third"/>
 </navigation>

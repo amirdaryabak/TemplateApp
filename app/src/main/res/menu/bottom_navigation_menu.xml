@@ -4,9 +4,12 @@
         android:id="@+id/homeFragment"
         android:title="homeFragment" />
     <item
-        android:id="@+id/firstFragment"
-        android:title="firstFragment" />
+        android:id="@+id/firstFragmentViewPager2"
+        android:title="firstFragmentViewPager2" />
     <item
         android:id="@+id/secondFragmentNotifications"
         android:title="secondFragmentNotifications" />
+    <item
+        android:id="@+id/thirdFragmentIntentServices"
+        android:title="thirdFragmentIntentServices" />
 </menu>
