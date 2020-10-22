@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.amirdaryabak.templateapp.ui.fragments.FirstFragment"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.FirstFragmentViewPager2"
         android:label="FirstFragment"
         tools:layout="@layout/fragment_first">
         <action

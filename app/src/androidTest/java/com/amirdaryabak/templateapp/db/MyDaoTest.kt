@@ -47,7 +47,7 @@ class MyDaoTest {
 
     @Test
     fun insert() = runBlockingTest {
-        val myDataModel = MyDataModel("name")
+        val myDataModel = MyDataModel("name", 1)
         dao.insert(myDataModel)
 
         val allShoppingItems = dao.observeAllItems().getOrAwaitValue()
@@ -57,7 +57,7 @@ class MyDaoTest {
 
     @Test
     fun delete() = runBlockingTest {
-        val myDataModel = MyDataModel("name")
+        val myDataModel = MyDataModel("name", 1)
         dao.insert(myDataModel)
         dao.delete(myDataModel)
 
