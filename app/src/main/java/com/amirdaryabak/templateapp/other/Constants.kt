@@ -9,4 +9,8 @@ object Constants {
 
     const val MAX_NAME_LENGTH = 20
 
+    const val CHANEL_ID = "CHANEL_ID"
+    const val CHANEL_NAME = "CHANEL_NAME"
+    const val NOTIFICATION_ID = 0
+
 }

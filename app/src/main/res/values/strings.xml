@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TemplateApp</string>
+    <dimen name="radius_small">30dp</dimen>
 </resources>

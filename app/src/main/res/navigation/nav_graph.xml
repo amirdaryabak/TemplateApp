@@ -29,4 +29,9 @@
         android:name="com.amirdaryabak.templateapp.ui.fragments.SecondFragment"
         android:label="SecondFragment"
         tools:layout="@layout/fragment_second"/>
+    <fragment
+        android:id="@+id/secondFragmentNotifications"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.SecondFragmentNotifications"
+        android:label="SecondFragmentNotifications"
+        tools:layout="@layout/fragment_second"/>
 </navigation>
