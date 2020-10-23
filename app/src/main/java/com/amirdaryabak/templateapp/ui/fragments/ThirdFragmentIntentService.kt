@@ -25,12 +25,12 @@ class ThirdFragmentIntentService : Fragment(R.layout.fragment_third) {
         buttonStart.setOnClickListener {
             Intent(requireContext(), MyIntentService::class.java).also {
                 requireActivity().startService(it)
-                txtService.text = "Service running"
+                txtService.text = "IntentService running"
             }
         }
         buttonStop.setOnClickListener {
             MyIntentService.stopService()
-            txtService.text = "Service stoped"
+            txtService.text = "IntentService stopped"
         }
 
     }

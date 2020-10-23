@@ -31,4 +31,9 @@
         android:name="com.amirdaryabak.templateapp.ui.fragments.ThirdFragmentIntentService"
         android:label="ThirdFragmentServices"
         tools:layout="@layout/fragment_third"/>
+    <fragment
+        android:id="@+id/forthFragmentService"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.ForthFragmentService"
+        android:label="ForthFragmentService"
+        tools:layout="@layout/fragment_forth"/>
 </navigation>

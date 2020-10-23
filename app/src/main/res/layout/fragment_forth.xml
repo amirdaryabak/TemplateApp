@@ -35,11 +35,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="IntentService stopped"
+        android:text="Service stopped"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/buttonStart"
         app:layout_constraintStart_toStartOf="@+id/buttonStop"
         app:layout_constraintTop_toBottomOf="@+id/buttonStart" />
+
+    <EditText
+        android:id="@+id/etDataString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Data String"
+        android:inputType="textPersonName"
+        android:textColorHint="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@+id/txtService"
+        app:layout_constraintStart_toStartOf="@+id/txtService"
+        app:layout_constraintTop_toBottomOf="@+id/txtService" />
+
+    <Button
+        android:id="@+id/buttonSendData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="SendData"
+        app:layout_constraintEnd_toEndOf="@+id/etDataString"
+        app:layout_constraintTop_toBottomOf="@+id/etDataString" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
