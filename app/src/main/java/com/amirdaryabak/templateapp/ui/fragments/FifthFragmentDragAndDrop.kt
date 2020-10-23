@@ -15,10 +15,10 @@ import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import com.amirdaryabak.templateapp.R
 import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.fragment_sixth.*
+import kotlinx.android.synthetic.main.fragment_fifth.*
 
 @AndroidEntryPoint
-class SixthFragmentDragAndDrop : Fragment(R.layout.fragment_sixth) {
+class FifthFragmentDragAndDrop : Fragment(R.layout.fragment_fifth) {
 
     private val viewModel: MainViewModel by viewModels()
 

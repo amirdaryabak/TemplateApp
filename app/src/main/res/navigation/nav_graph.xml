@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/sixthFragmentDragAndDrop">
+    app:startDestination="@id/homeFragment">
 
 
     <fragment
@@ -34,7 +34,12 @@
         tools:layout="@layout/fragment_forth"/>
     <fragment
         android:id="@+id/sixthFragmentDragAndDrop"
-        android:name="com.amirdaryabak.templateapp.ui.fragments.SixthFragmentDragAndDrop"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.FifthFragmentDragAndDrop"
         android:label="SixthFragmentDragAndDrop"
+        tools:layout="@layout/fragment_fifth"/>
+    <fragment
+        android:id="@+id/sixthFragmentBroadcastReceiver"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.SixthFragmentBroadcastReceiver"
+        android:label="SixthFragmentBroadcastReceiver"
         tools:layout="@layout/fragment_sixth"/>
 </navigation>

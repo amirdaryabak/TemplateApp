@@ -42,6 +42,10 @@ class MainActivity : AppCompatActivity() {
                         toolbar.visibility = View.GONE
                         bottomNavigationView.visibility = View.VISIBLE
                     }
+                    R.id.firstFragmentViewPager2 -> {
+                        toolbar.visibility = View.GONE
+                        bottomNavigationView.visibility = View.GONE
+                    }
                 }
             }
     }

@@ -6,13 +6,4 @@
     <item
         android:id="@+id/firstFragmentViewPager2"
         android:title="firstFragmentViewPager2" />
-    <item
-        android:id="@+id/secondFragmentNotifications"
-        android:title="secondFragmentNotifications" />
-    <item
-        android:id="@+id/thirdFragmentIntentServices"
-        android:title="thirdFragmentIntentServices" />
-    <item
-        android:id="@+id/forthFragmentService"
-        android:title="forthFragmentService" />
 </menu>

@@ -24,12 +24,20 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val fragments = arrayListOf<Fragment>()
-        val fragmentsNameList = arrayListOf<String>()
-            for (i in 1..4) {
-                fragments.add(ViewPager2ContentFragment(i.toString()))
-                fragmentsNameList.add(i.toString())
-            }
+        val fragments = arrayListOf(
+            SecondFragmentNotifications(),
+            ThirdFragmentIntentService(),
+            ForthFragmentService(),
+            FifthFragmentDragAndDrop(),
+            SixthFragmentBroadcastReceiver(),
+        )
+        val fragmentsNameList = arrayListOf(
+            "SecondFragmentNotifications",
+            "ThirdFragmentIntentService",
+            "ForthFragmentService",
+            "FifthFragmentDragAndDrop",
+            "SixthFragmentBroadcastReceiver",
+        )
         setUpViewPagerAdapter(fragments)
         setUpTabLayoutMediator(fragmentsNameList, tabLayout, viewPager)
 
