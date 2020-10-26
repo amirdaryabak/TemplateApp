@@ -42,4 +42,9 @@
         android:name="com.amirdaryabak.templateapp.ui.fragments.SixthFragmentBroadcastReceiver"
         android:label="SixthFragmentBroadcastReceiver"
         tools:layout="@layout/fragment_sixth"/>
+    <fragment
+        android:id="@+id/floatingActionButtonToBottomNavigationFragment"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.SeventhFloatingActionButtonToBottomNavigationFragment"
+        android:label="FloatingActionButtonToBottomNavigationFragment"
+        tools:layout="@layout/fragment_seventh"/>
 </navigation>

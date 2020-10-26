@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
 
         // radius for bottomNavigationView
         val radius = resources.getDimension(R.dimen.radius_small)
@@ -39,11 +39,11 @@ class MainActivity : AppCompatActivity() {
             .addOnDestinationChangedListener { controller, destination, arguments ->
                 when (destination.id) {
                     R.id.homeFragment -> {
-                        toolbar.visibility = View.GONE
+//                        toolbar.visibility = View.GONE
                         bottomNavigationView.visibility = View.VISIBLE
                     }
                     R.id.firstFragmentViewPager2 -> {
-                        toolbar.visibility = View.GONE
+//                        toolbar.visibility = View.GONE
                         bottomNavigationView.visibility = View.GONE
                     }
                 }
