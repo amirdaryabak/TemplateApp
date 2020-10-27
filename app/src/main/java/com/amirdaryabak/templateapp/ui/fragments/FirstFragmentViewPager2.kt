@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.amirdaryabak.templateapp.R
 import com.amirdaryabak.templateapp.adapters.ViewPagerAdapter
@@ -31,6 +30,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             FifthFragmentDragAndDrop(),
             SixthFragmentBroadcastReceiver(),
             SeventhFloatingActionButtonToBottomNavigationFragment(),
+            EighthFragmentOpenContextMenuToAView(),
         )
         val fragmentsNameList = arrayListOf(
             "SecondFragmentNotifications",
@@ -39,6 +39,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             "FifthFragmentDragAndDrop",
             "SixthFragmentBroadcastReceiver",
             "SeventhFloatingActionButtonToBottomNavigationFragment",
+            "EighthFragmentOpenContextMenuToAView",
         )
         setUpViewPagerAdapter(fragments)
         setUpTabLayoutMediator(fragmentsNameList, tabLayout, viewPager)

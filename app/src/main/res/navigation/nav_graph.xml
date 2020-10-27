@@ -47,4 +47,9 @@
         android:name="com.amirdaryabak.templateapp.ui.fragments.SeventhFloatingActionButtonToBottomNavigationFragment"
         android:label="FloatingActionButtonToBottomNavigationFragment"
         tools:layout="@layout/fragment_seventh"/>
+    <fragment
+        android:id="@+id/eighthFragmentOpenContextMenuToAView"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.EighthFragmentOpenContextMenuToAView"
+        android:label="EighthFragmentOpenContextMenuToAView"
+        tools:layout="@layout/fragment_eighth"/>
 </navigation>

@@ -15,3 +15,14 @@
 10. Timber
 11. Paging 3
 12. google truth library
+
+**Features**
+- Notifications
+- IntentService
+- Service
+- DragAndDrop
+- BroadcastReceiver
+- ContextMenu
+
+**UI**
+- Floating Action Button Top Of BottomNavigationView and BottomAppBar with radius

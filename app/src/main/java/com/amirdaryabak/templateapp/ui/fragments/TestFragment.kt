@@ -19,8 +19,7 @@ class TestFragment : Fragment(R.layout.fragment_seventh) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bottomNavigationView.background = null
-        bottomNavigationView.menu.getItem(2).isEnabled = false
+
 
     }
 
