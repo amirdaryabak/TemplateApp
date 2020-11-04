@@ -16,40 +16,48 @@
         android:name="com.amirdaryabak.templateapp.ui.fragments.FirstFragmentViewPager2"
         android:label="FirstFragment"
         tools:layout="@layout/fragment_first">
+        <argument
+            android:name="name"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="amirdaryabak.com/firstfragment/{name}" />
     </fragment>
     <fragment
         android:id="@+id/secondFragmentNotifications"
         android:name="com.amirdaryabak.templateapp.ui.fragments.SecondFragmentNotifications"
         android:label="SecondFragmentNotifications"
-        tools:layout="@layout/fragment_second"/>
+        tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/thirdFragmentIntentServices"
         android:name="com.amirdaryabak.templateapp.ui.fragments.ThirdFragmentIntentService"
         android:label="ThirdFragmentServices"
-        tools:layout="@layout/fragment_third"/>
+        tools:layout="@layout/fragment_third" />
     <fragment
         android:id="@+id/forthFragmentService"
         android:name="com.amirdaryabak.templateapp.ui.fragments.ForthFragmentService"
         android:label="ForthFragmentService"
-        tools:layout="@layout/fragment_forth"/>
+        tools:layout="@layout/fragment_forth" />
     <fragment
         android:id="@+id/sixthFragmentDragAndDrop"
         android:name="com.amirdaryabak.templateapp.ui.fragments.FifthFragmentDragAndDrop"
         android:label="SixthFragmentDragAndDrop"
-        tools:layout="@layout/fragment_fifth"/>
+        tools:layout="@layout/fragment_fifth" />
     <fragment
         android:id="@+id/sixthFragmentBroadcastReceiver"
         android:name="com.amirdaryabak.templateapp.ui.fragments.SixthFragmentBroadcastReceiver"
         android:label="SixthFragmentBroadcastReceiver"
-        tools:layout="@layout/fragment_sixth"/>
+        tools:layout="@layout/fragment_sixth" />
     <fragment
         android:id="@+id/floatingActionButtonToBottomNavigationFragment"
         android:name="com.amirdaryabak.templateapp.ui.fragments.SeventhFloatingActionButtonToBottomNavigationFragment"
         android:label="FloatingActionButtonToBottomNavigationFragment"
-        tools:layout="@layout/fragment_seventh"/>
+        tools:layout="@layout/fragment_seventh" />
     <fragment
         android:id="@+id/eighthFragmentOpenContextMenuToAView"
         android:name="com.amirdaryabak.templateapp.ui.fragments.EighthFragmentOpenContextMenuToAView"
         android:label="EighthFragmentOpenContextMenuToAView"
-        tools:layout="@layout/fragment_eighth"/>
+        tools:layout="@layout/fragment_eighth" />
 </navigation>
