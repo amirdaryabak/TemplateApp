@@ -8,6 +8,8 @@ import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import com.amirdaryabak.templateapp.R
 import com.amirdaryabak.templateapp.adapters.ViewPagerAdapter
+import com.amirdaryabak.templateapp.databinding.FragmentFirstBinding
+import com.amirdaryabak.templateapp.databinding.FragmentTestBinding
 import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -18,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_first.*
 @AndroidEntryPoint
 class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
 
+    private lateinit var binding: FragmentFirstBinding
     private val viewModel: MainViewModel by viewModels()
     private val args: FirstFragmentViewPager2Args by navArgs()
 
@@ -25,6 +28,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentFirstBinding.bind(view)
 
         Toasty.success(requireContext(), args.name.toString()).show()
 
@@ -47,7 +51,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             "EighthFragmentOpenContextMenuToAView",
         )
         setUpViewPagerAdapter(fragments)
-        setUpTabLayoutMediator(fragmentsNameList, tabLayout, viewPager)
+        setUpTabLayoutMediator(fragmentsNameList, binding.tabLayout, binding.viewPager)
 
     }
 

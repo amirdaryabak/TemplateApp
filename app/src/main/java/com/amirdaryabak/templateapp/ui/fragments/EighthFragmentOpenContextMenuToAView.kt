@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import com.amirdaryabak.templateapp.R
+import com.amirdaryabak.templateapp.databinding.FragmentEighthBinding
 import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_eighth.*
@@ -15,14 +16,16 @@ import kotlinx.android.synthetic.main.fragment_eighth.*
 @AndroidEntryPoint
 class EighthFragmentOpenContextMenuToAView : Fragment(R.layout.fragment_eighth) {
 
+    private lateinit var binding: FragmentEighthBinding
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "EighthFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentEighthBinding.bind(view)
 
-        registerForContextMenu(menuButton)
+        registerForContextMenu(binding.menuButton)
 
     }
 

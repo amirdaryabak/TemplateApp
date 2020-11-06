@@ -6,19 +6,22 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import com.amirdaryabak.templateapp.R
+import com.amirdaryabak.templateapp.databinding.ActivityMainBinding
+import com.amirdaryabak.templateapp.databinding.FragmentTestBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
-class TestFragment : Fragment(R.layout.fragment_seventh) {
+class TestFragment : Fragment(R.layout.fragment_test) {
 
+    private lateinit var binding: FragmentTestBinding
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "TestFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding = FragmentTestBinding.bind(view)
 
 
     }

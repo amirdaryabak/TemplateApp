@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import com.amirdaryabak.templateapp.R
+import com.amirdaryabak.templateapp.databinding.FragmentSecondBinding
 import com.amirdaryabak.templateapp.other.Constants.CHANEL_ID
 import com.amirdaryabak.templateapp.other.Constants.CHANEL_NAME
 import com.amirdaryabak.templateapp.other.Constants.NOTIFICATION_ID
@@ -26,12 +27,14 @@ import kotlinx.android.synthetic.main.fragment_second.*
 @AndroidEntryPoint
 class SecondFragmentNotifications : Fragment(R.layout.fragment_second) {
 
+    private lateinit var binding: FragmentSecondBinding
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "SecondFragmentNotifications"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentSecondBinding.bind(view)
 
         val intent = Intent(requireContext(), MainActivity::class.java)
         val pendingIntent = TaskStackBuilder.create(requireContext()).run {
@@ -48,7 +51,7 @@ class SecondFragmentNotifications : Fragment(R.layout.fragment_second) {
             .setAutoCancel(true)
             .build()
         val notificationManager = NotificationManagerCompat.from(requireContext())
-        ShowNotification.setOnClickListener {
+        binding.showNotification.setOnClickListener {
             notificationManager.notify(NOTIFICATION_ID, notification)
         }
 

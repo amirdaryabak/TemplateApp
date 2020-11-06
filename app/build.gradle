@@ -21,6 +21,10 @@ android {
         testInstrumentationRunner "com.amirdaryabak.templateapp.HiltTestRunner"
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
