@@ -40,6 +40,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             SixthFragmentBroadcastReceiver(),
             SeventhFloatingActionButtonToBottomNavigationFragment(),
             EighthFragmentOpenContextMenuToAView(),
+            NinthFragment(),
         )
         val fragmentsNameList = arrayListOf(
             "SecondFragmentNotifications",
@@ -49,6 +50,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             "SixthFragmentBroadcastReceiver",
             "SeventhFloatingActionButtonToBottomNavigationFragment",
             "EighthFragmentOpenContextMenuToAView",
+            "NinthFragment",
         )
         setUpViewPagerAdapter(fragments)
         setUpTabLayoutMediator(fragmentsNameList, binding.tabLayout, binding.viewPager)
@@ -60,7 +62,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
         tabLayout: TabLayout,
         viewPager: ViewPager2
     ) {
-//        tabLayout.tabMode = TabLayout.MODE_SCROLLABLE
+        tabLayout.tabMode = TabLayout.MODE_SCROLLABLE
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = fragmentNameList[position]
         }.attach()

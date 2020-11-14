@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.AppTheme)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
+//        setSupportActionBar(binding.toolbar)
 
         // radius for bottomNavigationView
         val radius = resources.getDimension(R.dimen.radius_small)
@@ -46,11 +46,11 @@ class MainActivity : AppCompatActivity() {
             .addOnDestinationChangedListener { controller, destination, arguments ->
                 when (destination.id) {
                     R.id.homeFragment -> {
-                        binding.toolbar.visibility = View.VISIBLE
+//                        binding.toolbar.visibility = View.VISIBLE
                         binding.bottomNavigationView.visibility = View.VISIBLE
                     }
                     R.id.firstFragmentViewPager2 -> {
-                        binding.toolbar.visibility = View.VISIBLE
+//                        binding.toolbar.visibility = View.VISIBLE
                         binding.bottomNavigationView.visibility = View.GONE
                     }
                 }
