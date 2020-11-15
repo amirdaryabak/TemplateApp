@@ -10,7 +10,11 @@
         android:id="@+id/homeFragment"
         android:name="com.amirdaryabak.templateapp.ui.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_bottomSheetModalFragment"
+            app:destination="@id/bottomSheetModalFragment" />
+    </fragment>
     <fragment
         android:id="@+id/firstFragmentViewPager2"
         android:name="com.amirdaryabak.templateapp.ui.fragments.FirstFragmentViewPager2"
@@ -60,4 +64,28 @@
         android:name="com.amirdaryabak.templateapp.ui.fragments.EighthFragmentOpenContextMenuToAView"
         android:label="EighthFragmentOpenContextMenuToAView"
         tools:layout="@layout/fragment_eighth" />
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.TestFragment"
+        android:label="TestFragment"
+        tools:layout="@layout/fragment_test"/>
+    <fragment
+        android:id="@+id/ninthFragment"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.NinthFragment"
+        android:label="NinthFragment"
+        tools:layout="@layout/fragment_ninth" />
+    <fragment
+        android:id="@+id/tenthFragment"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.TenthFragment"
+        android:label="TenthFragment"
+        tools:layout="@layout/fragment_tenth" >
+        <action
+            android:id="@+id/action_tenthFragment_to_bottomSheetModalFragment"
+            app:destination="@id/bottomSheetModalFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/bottomSheetModalFragment"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.BottomSheetModalFragment"
+        android:label="BottomSheetModalFragment"
+        tools:layout="@layout/fragment_bottom_sheet_modal"/>
 </navigation>

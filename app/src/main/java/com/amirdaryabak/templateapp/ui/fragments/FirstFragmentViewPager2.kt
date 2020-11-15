@@ -41,6 +41,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             SeventhFloatingActionButtonToBottomNavigationFragment(),
             EighthFragmentOpenContextMenuToAView(),
             NinthFragment(),
+            TenthFragment(),
         )
         val fragmentsNameList = arrayListOf(
             "SecondFragmentNotifications",
@@ -51,6 +52,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             "SeventhFloatingActionButtonToBottomNavigationFragment",
             "EighthFragmentOpenContextMenuToAView",
             "NinthFragment",
+            "TenthFragment",
         )
         setUpViewPagerAdapter(fragments)
         setUpTabLayoutMediator(fragmentsNameList, binding.tabLayout, binding.viewPager)
