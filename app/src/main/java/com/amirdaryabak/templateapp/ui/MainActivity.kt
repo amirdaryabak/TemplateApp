@@ -53,6 +53,9 @@ class MainActivity : AppCompatActivity() {
 //                        binding.toolbar.visibility = View.VISIBLE
                         binding.bottomNavigationView.visibility = View.GONE
                     }
+                    R.id.eleventhFragment -> {
+                        binding.bottomNavigationView.visibility = View.GONE
+                    }
                 }
             }
     }

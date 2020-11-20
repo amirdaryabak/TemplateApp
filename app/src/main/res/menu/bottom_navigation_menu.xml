@@ -8,4 +8,8 @@
         android:id="@+id/firstFragmentViewPager2"
         android:title="ViewPager2"
         android:icon="@drawable/ic_description_24"/>
+    <item
+        android:id="@+id/eleventhFragment"
+        android:title="EleventhFragment"
+        android:icon="@drawable/ic_description_24"/>
 </menu>

@@ -88,4 +88,9 @@
         android:name="com.amirdaryabak.templateapp.ui.fragments.BottomSheetModalFragment"
         android:label="BottomSheetModalFragment"
         tools:layout="@layout/fragment_bottom_sheet_modal"/>
+    <fragment
+        android:id="@+id/eleventhFragment"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.EleventhFragment"
+        android:label="EleventhFragment"
+        tools:layout="@layout/fragment_eleventh"/>
 </navigation>
