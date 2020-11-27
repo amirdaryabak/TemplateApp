@@ -6,6 +6,7 @@ object Constants {
     const val DATABASE_NAME = "DATABASE_NAME"
     const val BASE_URL = "https://pixabay.com"
     const val SHARED_PREFERENCES_NAME = "sharedPref"
+    const val DATA_STORE_NAME = "dataStore"
 
     const val MAX_NAME_LENGTH = 20
 

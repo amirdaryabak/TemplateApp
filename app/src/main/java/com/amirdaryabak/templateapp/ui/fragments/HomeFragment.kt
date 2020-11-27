@@ -2,14 +2,21 @@ package com.amirdaryabak.templateapp.ui.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.preferencesKey
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.amirdaryabak.templateapp.R
 import com.amirdaryabak.templateapp.databinding.FragmentHomeBinding
 import com.amirdaryabak.templateapp.eventbus.MyEvent
 import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -22,6 +29,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val viewModel: MainViewModel by viewModels()
     @Inject
     lateinit var eventBus: EventBus
+    @Inject
+    lateinit var dataStore: DataStore<Preferences>
 
     val TAG = "HomeFragment"
 
@@ -30,8 +39,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(view)
 
         binding.button.setOnClickListener {
-            eventBus.register(this)
-            Toasty.info(requireContext(), "Registered Successfully").show()
+            if (!eventBus.isRegistered(this)) {
+                eventBus.register(this)
+                Toasty.info(requireContext(), "Registered Successfully").show()
+            } else {
+                Toasty.info(requireContext(), "Already Registered!3").show()
+            }
         }
 
         binding.button2.setOnClickListener {
@@ -39,7 +52,25 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             Toasty.error(requireContext(), "Unregistered Successfully").show()
         }
 
+        lifecycleScope.launch {
+            saveToDataStore("key", "DataStoreValue")
+            Toasty.success(requireContext(), readFromDataStore("key").toString()).show()
+        }
 
+
+    }
+
+    private suspend fun saveToDataStore(key: String, value: String) {
+        val dataStoreKey = preferencesKey<String>(key)
+        dataStore.edit { settings ->
+            settings[dataStoreKey] = value
+        }
+    }
+
+    private suspend fun readFromDataStore(key: String): String? {
+        val dataStoreKey = preferencesKey<String>(key)
+        val preferences = dataStore.data.first()
+        return preferences[dataStoreKey]
     }
 
     override fun onStart() {
@@ -51,6 +82,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onStop()
         eventBus.unregister(this)
     }
+
 
 
     @Subscribe(threadMode = ThreadMode.MAIN)
