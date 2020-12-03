@@ -19,20 +19,26 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class TenthFragment : Fragment(R.layout.fragment_tenth) {
 
-    private lateinit var binding: FragmentTenthBinding
+    private var _binding: FragmentTenthBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "TenthFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentTenthBinding.bind(view)
+        _binding = FragmentTenthBinding.bind(view)
 
         binding.btnOpenModalBottomSheet.setOnClickListener {
             findNavController().navigate(
                 R.id.action_tenthFragment_to_bottomSheetModalFragment
             )
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

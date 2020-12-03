@@ -19,15 +19,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class EleventhFragment : Fragment(R.layout.fragment_eleventh) {
 
-    private lateinit var binding: FragmentEleventhBinding
+    private var _binding: FragmentEleventhBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "EleventhFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentEleventhBinding.bind(view)
+        _binding = FragmentEleventhBinding.bind(view)
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

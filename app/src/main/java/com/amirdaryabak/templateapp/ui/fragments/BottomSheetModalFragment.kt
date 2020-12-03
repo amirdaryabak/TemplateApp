@@ -11,6 +11,7 @@ import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import com.amirdaryabak.templateapp.R
 import com.amirdaryabak.templateapp.api.Resource
 import com.amirdaryabak.templateapp.databinding.ActivityMainBinding
+import com.amirdaryabak.templateapp.databinding.FragmentHomeBinding
 import com.amirdaryabak.templateapp.databinding.FragmentTestBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,15 +20,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class BottomSheetModalFragment : BottomSheetDialogFragment() {
 
-    private lateinit var binding: FragmentTestBinding
+    private var _binding: FragmentTestBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "TestFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentTestBinding.bind(view)
+        _binding = FragmentTestBinding.bind(view)
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

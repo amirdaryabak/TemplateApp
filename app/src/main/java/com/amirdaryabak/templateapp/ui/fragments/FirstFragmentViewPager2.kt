@@ -20,7 +20,8 @@ import kotlinx.android.synthetic.main.fragment_first.*
 @AndroidEntryPoint
 class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
 
-    private lateinit var binding: FragmentFirstBinding
+    private var _binding: FragmentFirstBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
     private val args: FirstFragmentViewPager2Args by navArgs()
 
@@ -28,7 +29,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentFirstBinding.bind(view)
+        _binding = FragmentFirstBinding.bind(view)
 
         Toasty.success(requireContext(), args.name.toString()).show()
 
@@ -77,6 +78,11 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             lifecycle
         )
 //        viewPager.isUserInputEnabled = false
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

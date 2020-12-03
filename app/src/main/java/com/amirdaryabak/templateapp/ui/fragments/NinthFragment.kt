@@ -22,7 +22,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class NinthFragment : Fragment(R.layout.fragment_ninth) {
 
-    private lateinit var binding: FragmentNinthBinding
+    private var _binding: FragmentNinthBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     private val cropActivityResultContract = object : ActivityResultContract<Any?, Uri?>() {
@@ -43,7 +44,7 @@ class NinthFragment : Fragment(R.layout.fragment_ninth) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentNinthBinding.bind(view)
+        _binding = FragmentNinthBinding.bind(view)
 
         cropActivityResultLauncher = registerForActivityResult(cropActivityResultContract) {
             it?.let { uri ->
@@ -55,6 +56,11 @@ class NinthFragment : Fragment(R.layout.fragment_ninth) {
             cropActivityResultLauncher.launch(null)
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

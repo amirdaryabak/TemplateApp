@@ -27,14 +27,15 @@ import kotlinx.android.synthetic.main.fragment_second.*
 @AndroidEntryPoint
 class SecondFragmentNotifications : Fragment(R.layout.fragment_second) {
 
-    private lateinit var binding: FragmentSecondBinding
+    private var _binding: FragmentSecondBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "SecondFragmentNotifications"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentSecondBinding.bind(view)
+        _binding = FragmentSecondBinding.bind(view)
 
         val intent = Intent(requireContext(), MainActivity::class.java)
         val pendingIntent = TaskStackBuilder.create(requireContext()).run {
@@ -71,6 +72,11 @@ class SecondFragmentNotifications : Fragment(R.layout.fragment_second) {
             manager.createNotificationChannel(channel)
 
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

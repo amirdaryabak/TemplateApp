@@ -13,14 +13,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class SeventhFloatingActionButtonToBottomNavigationFragment : Fragment(R.layout.fragment_seventh) {
 
-    private lateinit var binding: FragmentSeventhBinding
+    private var _binding: FragmentSeventhBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "FloatingActionButtonToBottomNavigationFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentSeventhBinding.bind(view)
+        _binding = FragmentSeventhBinding.bind(view)
 
         binding.bottomNavigationView.background = null
         binding.bottomNavigationView.menu.getItem(2).isEnabled = false

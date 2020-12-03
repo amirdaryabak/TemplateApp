@@ -16,14 +16,15 @@ import kotlinx.android.synthetic.main.fragment_eighth.*
 @AndroidEntryPoint
 class EighthFragmentOpenContextMenuToAView : Fragment(R.layout.fragment_eighth) {
 
-    private lateinit var binding: FragmentEighthBinding
+    private var _binding: FragmentEighthBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "EighthFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentEighthBinding.bind(view)
+        _binding = FragmentEighthBinding.bind(view)
 
         registerForContextMenu(binding.menuButton)
 
@@ -47,4 +48,8 @@ class EighthFragmentOpenContextMenuToAView : Fragment(R.layout.fragment_eighth) 
         return super.onContextItemSelected(item)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

@@ -20,7 +20,8 @@ import es.dmoral.toasty.Toasty
 @AndroidEntryPoint
 class FifthFragmentDragAndDrop : Fragment(R.layout.fragment_fifth) {
 
-    private lateinit var binding: FragmentFifthBinding
+    private var _binding: FragmentFifthBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "SixthFragmentDragAndDrop"
@@ -28,7 +29,7 @@ class FifthFragmentDragAndDrop : Fragment(R.layout.fragment_fifth) {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentFifthBinding.bind(view)
+        _binding = FragmentFifthBinding.bind(view)
 
         binding.llTop.setOnDragListener(dragListener)
         binding.llBottom.setOnDragListener(dragListener)
@@ -82,6 +83,11 @@ class FifthFragmentDragAndDrop : Fragment(R.layout.fragment_fifth) {
             }
             else -> false
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

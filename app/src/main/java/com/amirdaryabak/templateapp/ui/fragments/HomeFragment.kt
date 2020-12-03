@@ -25,7 +25,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
     @Inject
     lateinit var eventBus: EventBus
@@ -36,7 +37,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentHomeBinding.bind(view)
+        _binding = FragmentHomeBinding.bind(view)
 
         binding.button.setOnClickListener {
             if (!eventBus.isRegistered(this)) {
@@ -73,6 +74,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         return preferences[dataStoreKey]
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onMyEvent(myEvent: MyEvent) {
+        Toasty.success(requireContext(), myEvent.message).show()
+    }
+
     override fun onStart() {
         super.onStart()
         eventBus.register(this)
@@ -83,11 +89,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         eventBus.unregister(this)
     }
 
-
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onMyEvent(myEvent: MyEvent) {
-        Toasty.success(requireContext(), myEvent.message).show()
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

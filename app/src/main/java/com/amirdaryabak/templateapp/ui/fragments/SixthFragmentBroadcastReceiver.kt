@@ -15,7 +15,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SixthFragmentBroadcastReceiver : Fragment(R.layout.fragment_sixth) {
 
-    private lateinit var binding: FragmentSixthBinding
+    private var _binding: FragmentSixthBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
     private lateinit var receiver: MyBroadcastReceiver
 
@@ -23,7 +24,7 @@ class SixthFragmentBroadcastReceiver : Fragment(R.layout.fragment_sixth) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentSixthBinding.bind(view)
+        _binding = FragmentSixthBinding.bind(view)
 
         receiver = MyBroadcastReceiver()
         IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
@@ -36,4 +37,10 @@ class SixthFragmentBroadcastReceiver : Fragment(R.layout.fragment_sixth) {
         super.onStop()
         requireContext().unregisterReceiver(receiver)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
 }

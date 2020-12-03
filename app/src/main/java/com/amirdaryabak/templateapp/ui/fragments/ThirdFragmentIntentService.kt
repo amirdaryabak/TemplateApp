@@ -16,14 +16,15 @@ import kotlinx.android.synthetic.main.fragment_third.*
 @AndroidEntryPoint
 class ThirdFragmentIntentService : Fragment(R.layout.fragment_third) {
 
-    private lateinit var binding: FragmentThirdBinding
+    private var _binding: FragmentThirdBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "ThirdFragmentServices"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentThirdBinding.bind(view)
+        _binding = FragmentThirdBinding.bind(view)
 
         binding.buttonStart.setOnClickListener {
             Intent(requireContext(), MyIntentService::class.java).also {
@@ -36,6 +37,11 @@ class ThirdFragmentIntentService : Fragment(R.layout.fragment_third) {
             txtService.text = "IntentService stopped"
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

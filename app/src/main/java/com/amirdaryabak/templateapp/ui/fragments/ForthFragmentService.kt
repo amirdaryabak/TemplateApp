@@ -20,14 +20,15 @@ import kotlinx.android.synthetic.main.fragment_third.*
 @AndroidEntryPoint
 class ForthFragmentService : Fragment(R.layout.fragment_forth) {
 
-    private lateinit var binding: FragmentForthBinding
+    private var _binding: FragmentForthBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "ThirdFragmentServices"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentForthBinding.bind(view)
+        _binding = FragmentForthBinding.bind(view)
 
         binding.buttonStart.setOnClickListener {
             Intent(requireContext(), MyService::class.java).also {
@@ -51,6 +52,11 @@ class ForthFragmentService : Fragment(R.layout.fragment_forth) {
             }
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

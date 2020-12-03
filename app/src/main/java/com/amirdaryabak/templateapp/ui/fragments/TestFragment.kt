@@ -18,14 +18,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class TestFragment : Fragment(R.layout.fragment_test) {
 
-    private lateinit var binding: FragmentTestBinding
+    private var _binding: FragmentTestBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
     val TAG = "TestFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentTestBinding.bind(view)
+        _binding = FragmentTestBinding.bind(view)
 /*
         viewModel.value.observe(viewLifecycleOwner) { response ->
             when (response) {
@@ -48,6 +49,11 @@ class TestFragment : Fragment(R.layout.fragment_test) {
         }
 */
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }
