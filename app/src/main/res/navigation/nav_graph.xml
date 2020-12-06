@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_homeFragment_to_bottomSheetModalFragment"
             app:destination="@id/bottomSheetModalFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
     </fragment>
     <fragment
         android:id="@+id/firstFragmentViewPager2"
@@ -93,4 +96,9 @@
         android:name="com.amirdaryabak.templateapp.ui.fragments.EleventhFragment"
         android:label="EleventhFragment"
         tools:layout="@layout/fragment_eleventh"/>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.amirdaryabak.templateapp.ui.fragments.ImageFragment"
+        android:label="ImageFragment"
+        tools:layout="@layout/fragment_image"/>
 </navigation>

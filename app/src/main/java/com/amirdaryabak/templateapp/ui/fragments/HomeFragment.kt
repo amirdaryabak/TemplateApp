@@ -9,6 +9,8 @@ import androidx.datastore.preferences.core.preferencesKey
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.amirdaryabak.templateapp.R
 import com.amirdaryabak.templateapp.databinding.FragmentHomeBinding
 import com.amirdaryabak.templateapp.eventbus.MyEvent
@@ -38,6 +40,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHomeBinding.bind(view)
+
+        binding.imageView.setOnClickListener {
+            val extras = FragmentNavigatorExtras(binding.imageView to "image_big")
+            findNavController().navigate(
+                R.id.action_homeFragment_to_imageFragment,
+                null,
+                null,
+                extras
+            )
+        }
 
         binding.button.setOnClickListener {
             if (!eventBus.isRegistered(this)) {

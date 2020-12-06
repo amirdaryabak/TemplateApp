@@ -1,8 +1,6 @@
 package com.amirdaryabak.templateapp.di
 
 import android.content.Context
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.createDataStore
 import com.amirdaryabak.templateapp.other.Constants.DATA_STORE_NAME
 import com.amirdaryabak.templateapp.other.Constants.SHARED_PREFERENCES_NAME
