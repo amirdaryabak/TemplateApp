@@ -1,20 +1,19 @@
 package com.amirdaryabak.templateapp.ui.viewmodels
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.amirdaryabak.templateapp.api.Resource
-import com.amirdaryabak.templateapp.other.Constants
+import com.amirdaryabak.templateapp.models.MyDataModelAppLevel
 import com.amirdaryabak.templateapp.repositories.MainRepository
-import kotlinx.coroutines.launch
-import retrofit2.Response
-import java.io.IOException
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.receiveAsFlow
 
 class MainViewModel @ViewModelInject constructor(
     private val repository: MainRepository
 ) : ViewModel() {
+
+    private val tasksEventChannel = Channel<HandleEvent>()
+    val tasksEvent = tasksEventChannel.receiveAsFlow()
+
     /*
         private val _value: MutableLiveData<Resource<>> = MutableLiveData()
         val value: LiveData<Resource<>> = _value
@@ -40,4 +39,10 @@ class MainViewModel @ViewModelInject constructor(
         return Resource.Error(response.message())
     }
     */
+
+
+    sealed class HandleEvent {
+        object Obj : HandleEvent()
+        data class DT(val myDataModelAppLevel: MyDataModelAppLevel) : HandleEvent()
+    }
 }

@@ -15,8 +15,12 @@ import com.amirdaryabak.templateapp.R
 import com.amirdaryabak.templateapp.databinding.FragmentHomeBinding
 import com.amirdaryabak.templateapp.eventbus.MyEvent
 import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
+import com.amirdaryabak.templateapp.utils.exhaustive
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
+import kotlinx.coroutines.InternalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.greenrobot.eventbus.EventBus
@@ -70,6 +74,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             Toasty.success(requireContext(), readFromDataStore("key").toString()).show()
         }
 
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.tasksEvent.collect { event ->
+                when (event) {
+                    is MainViewModel.HandleEvent.Obj -> TODO()
+                    is MainViewModel.HandleEvent.DT -> TODO()
+                }.exhaustive
+            }
+        }
 
     }
 
