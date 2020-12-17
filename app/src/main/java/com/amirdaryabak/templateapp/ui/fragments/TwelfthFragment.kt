@@ -11,29 +11,45 @@ import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import com.amirdaryabak.templateapp.R
 import com.amirdaryabak.templateapp.api.Resource
 import com.amirdaryabak.templateapp.databinding.ActivityMainBinding
-import com.amirdaryabak.templateapp.databinding.FragmentTenthBinding
 import com.amirdaryabak.templateapp.databinding.FragmentTestBinding
+import com.amirdaryabak.templateapp.databinding.FragmentTwelfthBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
-class TenthFragment : Fragment(R.layout.fragment_tenth) {
+class TwelfthFragment : Fragment(R.layout.fragment_twelfth) {
 
-    private var _binding: FragmentTenthBinding? = null
+    private var _binding: FragmentTwelfthBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
-    val TAG = this::class.java.simpleName
+    val TAG = "TestFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentTenthBinding.bind(view)
+        _binding = FragmentTwelfthBinding.bind(view)
+/*
+        viewModel.value.observe(viewLifecycleOwner) { response ->
+            when (response) {
+                is Resource.Success -> {
+                    loading.visibility = View.GONE
+                    response.data?.let { result ->
 
-        binding.btnOpenModalBottomSheet.setOnClickListener {
-            findNavController().navigate(
-                TenthFragmentDirections.actionTenthFragmentToBottomSheetModalFragment()
-            )
+                    }
+                }
+                is Resource.Error -> {
+                    loading.visibility = View.GONE
+                    response.message?.let { message ->
+                        Log.e(TAG, "Error : $message")
+                    }
+                }
+                is Resource.Loading -> {
+                    loading.visibility = View.VISIBLE
+                }
+            }
         }
+*/
+
     }
 
     override fun onDestroy() {

@@ -22,7 +22,7 @@ class TestFragment : Fragment(R.layout.fragment_test) {
     private val binding get() = _binding!!
     private val viewModel: MainViewModel by viewModels()
 
-    val TAG = "TestFragment"
+    private val TAG = this::class.java.simpleName
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
