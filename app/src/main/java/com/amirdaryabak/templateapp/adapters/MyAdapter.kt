@@ -9,6 +9,10 @@ import javax.inject.Inject
 
 class MyAdapter @Inject constructor() : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
+    init {
+        setHasStableIds(true)
+    }
+
     inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
     /*private val differCallback = object : DiffUtil.ItemCallback<Any?>() {

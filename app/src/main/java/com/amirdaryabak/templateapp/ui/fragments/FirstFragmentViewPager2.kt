@@ -9,7 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.amirdaryabak.templateapp.R
 import com.amirdaryabak.templateapp.adapters.ViewPagerAdapter
 import com.amirdaryabak.templateapp.databinding.FragmentFirstBinding
-import com.amirdaryabak.templateapp.databinding.FragmentTestBinding
+import com.amirdaryabak.templateapp.exoplayer.ui.FacebookScreenFragment
 import com.amirdaryabak.templateapp.ui.viewmodels.MainViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -43,6 +43,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             EighthFragmentOpenContextMenuToAView(),
             NinthFragment(),
             TenthFragment(),
+            FacebookScreenFragment(),
         )
         val fragmentsNameList = arrayListOf(
             "SecondFragmentNotifications",
@@ -54,6 +55,7 @@ class FirstFragmentViewPager2 : Fragment(R.layout.fragment_first) {
             "EighthFragmentOpenContextMenuToAView",
             "NinthFragment",
             "TenthFragment",
+            "FacebookScreenFragment",
         )
         setUpViewPagerAdapter(fragments)
         setUpTabLayoutMediator(fragmentsNameList, binding.tabLayout, binding.viewPager)

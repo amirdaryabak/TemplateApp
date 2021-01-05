@@ -23,6 +23,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 
     buildTypes {
@@ -167,6 +168,15 @@ dependencies {
 
     // Preferences DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0-alpha04"
+
+    // for using rx observables
+    implementation("io.reactivex.rxjava3:rxkotlin:3.0.0")
+
+    // exoplayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.5'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.12.0'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.12.0'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.12.0'
 
 
 }
