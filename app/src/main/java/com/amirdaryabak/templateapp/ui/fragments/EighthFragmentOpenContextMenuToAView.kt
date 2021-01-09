@@ -13,6 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_eighth.*
 
+
 @AndroidEntryPoint
 class EighthFragmentOpenContextMenuToAView : Fragment(R.layout.fragment_eighth) {
 
