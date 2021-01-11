@@ -2,6 +2,9 @@ package com.amirdaryabak.templateapp.ui.viewmodels
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import com.amirdaryabak.templateapp.api.Event
+import com.amirdaryabak.templateapp.api.ResourceTest
 import com.amirdaryabak.templateapp.models.MyDataModelAppLevel
 import com.amirdaryabak.templateapp.repositories.MainRepository
 import kotlinx.coroutines.channels.Channel
@@ -13,6 +16,11 @@ class MainViewModel @ViewModelInject constructor(
 
     private val tasksEventChannel = Channel<HandleEvent>()
     val tasksEvent = tasksEventChannel.receiveAsFlow()
+
+    /*fun apiCall(p1: String, p2: Int, p3: Int) = liveData {
+        emit(Event(ResourceTest.loading(null)))
+        emit(Event(repository.apiCall(p1, p2, p3)))
+    }*/
 
     /*
         private val _value: MutableLiveData<Resource<>> = MutableLiveData()

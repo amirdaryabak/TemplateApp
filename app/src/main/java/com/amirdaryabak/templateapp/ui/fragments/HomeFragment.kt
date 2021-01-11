@@ -16,6 +16,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.amirdaryabak.templateapp.R
+import com.amirdaryabak.templateapp.api.Status
 import com.amirdaryabak.templateapp.databinding.FragmentHomeBinding
 import com.amirdaryabak.templateapp.eventbus.MyEvent
 import com.amirdaryabak.templateapp.other.Constants
@@ -197,5 +198,29 @@ class HomeFragment : Fragment(R.layout.fragment_home), EasyPermissions.Permissio
         super.onDestroy()
         _binding = null
     }
+
+    /*private fun getUserType() {
+        val fragments = arrayListOf<Fragment>()
+        val fragmentsNameList = arrayListOf<String>()
+        viewModel.apiCall(p1, p2, p3).observe(viewLifecycleOwner) { event ->
+            event.getContentIfNotHandled()?.let { response ->
+                when (response.status) {
+                    Status.SUCCESS -> {
+                        loading.visibility = View.GONE
+                        response.data?.let {
+
+                        }
+                    }
+                    Status.ERROR -> {
+                        loading.visibility = View.GONE
+
+                    }
+                    Status.LOADING -> {
+                        loading.visibility = View.VISIBLE
+                    }
+                }
+            }
+        }
+    }*/
 
 }
